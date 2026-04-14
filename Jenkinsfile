@@ -18,6 +18,8 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'dotnet build SampleApi.sln --configuration Release --no-restore'
+                sleep(time: 5, unit: 'SECONDS')
+                echo 'Resuming after sleep'
             }
         }
 
